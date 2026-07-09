@@ -11,6 +11,8 @@ type VisitorData = {
   asn?: string;
   latitude?: number;
   longitude?: number;
+  connectionType?: string;
+  securityStatus?: string;
 };
 
 export default function VisitorInfo() {
@@ -35,17 +37,47 @@ export default function VisitorInfo() {
         const geoRes = await fetch(`https://ipwho.is/${ipData.ip}`);
         const geoData = await geoRes.json();
 
+        const isp = geoData.connection?.isp || "Unknown";
+        const org = geoData.connection?.org || "Unknown";
+        const type = geoData.type || "Unknown";
+
+        const suspiciousKeywords = [
+          "vpn",
+          "proxy",
+          "hosting",
+          "cloud",
+          "data center",
+          "datacenter",
+          "server",
+          "digitalocean",
+          "amazon",
+          "google",
+          "microsoft",
+          "ovh",
+          "hetzner",
+        ];
+
+        const combined = `${isp} ${org} ${type}`.toLowerCase();
+
+        const isSuspicious = suspiciousKeywords.some((word) =>
+          combined.includes(word)
+        );
+
         setData({
           ip: ipData.ip,
-          country: geoData.country || ipData.country || "Unknown",
+          country: geoData.country_code || ipData.country || "Unknown",
           city: geoData.city || "Unknown",
           region: geoData.region || "Unknown",
-          isp: geoData.connection?.isp || "Unknown",
+          isp,
           asn: geoData.connection?.asn
             ? `AS${geoData.connection.asn}`
             : "Unknown",
           latitude: geoData.latitude,
           longitude: geoData.longitude,
+          connectionType: type,
+          securityStatus: isSuspicious
+            ? "Possible VPN / Proxy / Hosting Provider"
+            : "Likely Residential or Mobile ISP",
         });
       })
       .catch(() =>
@@ -57,14 +89,14 @@ export default function VisitorInfo() {
 
     const userAgent = navigator.userAgent;
 
-    const browser = userAgent.includes("Chrome")
+    const browser = userAgent.includes("Edg")
+      ? "Microsoft Edge"
+      : userAgent.includes("Chrome")
       ? "Chrome"
       : userAgent.includes("Firefox")
       ? "Firefox"
       : userAgent.includes("Safari")
       ? "Safari"
-      : userAgent.includes("Edge")
-      ? "Edge"
       : "Unknown";
 
     const os = userAgent.includes("Windows")
@@ -107,12 +139,26 @@ export default function VisitorInfo() {
 
       <div className="grid gap-4 md:grid-cols-2">
         <Info label="IP Address" value={data.ip} />
-        <Info label="Country" value={`${getFlag(data.country)} ${data.country}`} />
+        <Info
+          label="Country"
+          value={`${getFlag(data.country)} ${data.country}`}
+        />
         <Info label="City" value={data.city || "Unknown"} />
         <Info label="Region" value={data.region || "Unknown"} />
         <Info label="ISP" value={data.isp || "Unknown"} />
         <Info label="ASN" value={data.asn || "Unknown"} />
-        <Info label="Coordinates" value={`${data.latitude || "?"}, ${data.longitude || "?"}`} />
+        <Info
+          label="Coordinates"
+          value={`${data.latitude || "?"}, ${data.longitude || "?"}`}
+        />
+        <Info
+          label="Connection Type"
+          value={data.connectionType || "Unknown"}
+        />
+        <Info
+          label="Security Estimate"
+          value={data.securityStatus || "Unknown"}
+        />
         <Info label="Browser" value={browserInfo.browser} />
         <Info label="Operating System" value={browserInfo.os} />
         <Info label="Device Type" value={browserInfo.device} />
@@ -120,6 +166,11 @@ export default function VisitorInfo() {
         <Info label="Timezone" value={browserInfo.timezone} />
         <Info label="Screen Resolution" value={browserInfo.screen} />
       </div>
+
+      <p className="mt-6 text-sm text-gray-500">
+        Note: VPN, proxy, and hosting detection is an estimate based on public
+        network metadata and may not always be exact.
+      </p>
     </div>
   );
 }
