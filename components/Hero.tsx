@@ -23,7 +23,7 @@ export default function Hero() {
         skills in security operations and infrastructure technologies.
       </p>
 
-      <div className="mt-10 flex gap-4">
+      <div className="mt-10 flex flex-wrap justify-center gap-4">
         <a
           href="/Fayyad_Dahweesh_Technical_Support.pdf"
           target="_blank"
@@ -38,6 +38,13 @@ export default function Hero() {
           className="rounded-lg border border-cyan-500 px-6 py-3 font-semibold text-cyan-400 transition hover:bg-cyan-500 hover:text-black"
         >
           Contact Me
+        </a>
+
+        <a
+          href="/osint-demo"
+          className="rounded-lg border border-purple-500 px-6 py-3 font-semibold text-purple-400 transition hover:bg-purple-500 hover:text-black"
+        >
+          OSINT Demo
         </a>
       </div>
     </section>
