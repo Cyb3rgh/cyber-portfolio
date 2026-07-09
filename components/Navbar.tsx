@@ -9,7 +9,7 @@ export default function Navbar() {
   Fayyad
 </a>
 
-        <ul className="flex gap-8 text-gray-300">
+        <ul className="flex gap-4 text-gray-300 text-sm md:text-base">
           <li>
             <a
               href="#home"
