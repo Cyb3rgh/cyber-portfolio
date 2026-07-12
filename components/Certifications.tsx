@@ -20,7 +20,7 @@ const certifications = [
     name: "Practical Help Desk",
     issuer: "TCM Security • IT Support",
     icon: "🖥️",
-    certificateImage: "/certificates/practical-help-desk.jpg",
+    certificateImage: "/certificates/practical-help-desk.JPG",
     skills: [
       "Windows Troubleshooting",
       "Ticket Management",
@@ -32,10 +32,10 @@ const certifications = [
     ],
   },
   {
-    name: "Network+",
+    name: "Network+ Training",
     issuer: "ITPro • Networking",
     icon: "🌐",
-    certificateImage: "/certificates/network-plus.jpg",
+    certificateImage: "/certificates/network-plus.JPG",
     skills: [
       "TCP/IP",
       "Routing",
@@ -51,7 +51,7 @@ const certifications = [
     name: "OSINT",
     issuer: "TCM Security • Intelligence Gathering",
     icon: "🔎",
-    certificateImage: "/certificates/osint.jpg",
+    certificateImage: "/certificates/osint.JPG",
     skills: [
       "Open Source Intelligence",
       "Reconnaissance",
@@ -124,7 +124,7 @@ export default function Certifications() {
 
                 <div>
                   <h3 className="text-2xl font-semibold">{cert.name}</h3>
-                  <p className="text-cyan-400">{cert.issuer}</p>
+                  <p className="mt-1 text-cyan-400">{cert.issuer}</p>
                 </div>
               </div>
 
@@ -145,7 +145,7 @@ export default function Certifications() {
                     href={cert.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex rounded-lg border border-cyan-500 px-4 py-2 text-sm font-medium text-cyan-400 transition duration-300 hover:bg-cyan-500 hover:text-black"
+                    className="inline-flex items-center rounded-lg border border-cyan-500 px-4 py-2 text-sm font-medium text-cyan-400 transition duration-300 hover:bg-cyan-500 hover:text-black"
                   >
                     Verify Credential →
                   </a>
@@ -156,7 +156,7 @@ export default function Certifications() {
                     href={cert.certificateImage}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex rounded-lg border border-purple-500 px-4 py-2 text-sm font-medium text-purple-400 transition duration-300 hover:bg-purple-500 hover:text-black"
+                    className="inline-flex items-center rounded-lg border border-purple-500 px-4 py-2 text-sm font-medium text-purple-400 transition duration-300 hover:bg-purple-500 hover:text-black"
                   >
                     View Certificate →
                   </a>
