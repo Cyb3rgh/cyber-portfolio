@@ -7,10 +7,15 @@ export default function Footer() {
         </p>
 
         <p className="mt-2">
-          IT Support | Networking | Cybersecurity
+          Technical Support Specialist | IT Support Professional |
+          Cybersecurity Professional
         </p>
 
         <p className="mt-4 text-sm text-gray-500">
+          Built with Next.js, TypeScript, Tailwind CSS and Vercel
+        </p>
+
+        <p className="mt-2 text-sm text-gray-600">
           © 2026 Fayyad Dahweesh. All rights reserved.
         </p>
       </div>
