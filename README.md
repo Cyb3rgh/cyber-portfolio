@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fayyad Dahweesh — Cybersecurity Portfolio
 
-## Getting Started
+A responsive cybersecurity portfolio built with Next.js, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Live Website
+
+https://fayyad-cyber-vert.vercel.app
+
+## Features
+
+- Responsive desktop and mobile design
+- OSINT Intelligence Dashboard
+- GeoIP Intelligence
+- Browser Fingerprinting
+- Security Posture Estimation
+- Verified Certifications
+- Certificate Images
+- TryHackMe Achievements
+- Resume and Contact Links
+- GitHub and Vercel Deployment Workflow
+
+## Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Git
+- GitHub
+- Vercel
+
+## OSINT Intelligence Dashboard
+
+The OSINT dashboard demonstrates information that may be exposed through a browser and network request, including:
+
+- Public IP Address
+- Country, City, and Region
+- ISP and ASN
+- Browser and Operating System
+- Device and Screen Information
+- Time Zone and Language
+- Privacy and Security Indicators
+
+This project is intended for educational and cybersecurity-awareness purposes.
+
+## Certifications and Training
+
+- eJPTv2 — INE
+- Google Cybersecurity Professional Certificate
+- Google IT Support Professional Certificate
+- Practical Help Desk — TCM Security
+- OSINT — TCM Security
+- Network+ Training — ITPro
+
+## TryHackMe Achievements
+
+- Top 5% Global Ranking
+- 112 Completed Rooms
+- 18 Badges Earned
+- Level 46
+
+## Run the Project Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Cyb3rgh/cyber-portfolio.git
+```
+
+Open the project folder:
+
+```bash
+cd cyber-portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in your browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Future Projects
 
-## Learn More
+- Phishing Analyzer
+- Active Directory Security Lab
+- Splunk Investigations
+- Wazuh Monitoring Lab
 
-To learn more about Next.js, take a look at the following resources:
+## Author
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Fayyad Dahweesh**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Portfolio: https://fayyad-cyber-vert.vercel.app
+- LinkedIn: https://www.linkedin.com/in/fayyaddahweesh/
+- GitHub: https://github.com/Cyb3rgh
+- TryHackMe: https://tryhackme.com/p/Cyb3rgh0st95
