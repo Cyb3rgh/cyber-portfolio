@@ -70,23 +70,25 @@ export default function Hero() {
       {/* Portfolio Statistics */}
       <div className="mt-16 grid w-full max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
-          <h3 className="text-3xl font-bold text-cyan-400">1</h3>
-          <p className="mt-2 text-sm text-gray-400">OSINT Demo</p>
+          <h3 className="text-3xl font-bold text-cyan-400">112</h3>
+          <p className="mt-2 text-sm text-gray-400">Rooms Completed</p>
         </div>
 
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
-          <h3 className="text-3xl font-bold text-cyan-400">1</h3>
-          <p className="mt-2 text-sm text-gray-400">Intelligence Dashboard</p>
+          <h3 className="text-3xl font-bold text-cyan-400">Top 5%</h3>
+          <p className="mt-2 text-sm text-gray-400">Global Ranking</p>
         </div>
 
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
-          <h3 className="text-3xl font-bold text-cyan-400">1</h3>
-          <p className="mt-2 text-sm text-gray-400">Live Portfolio</p>
+          <h3 className="text-3xl font-bold text-cyan-400">18</h3>
+          <p className="mt-2 text-sm text-gray-400">Badges Earned</p>
         </div>
 
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
-          <h3 className="text-3xl font-bold text-cyan-400">2026</h3>
-          <p className="mt-2 text-sm text-gray-400">Portfolio Version</p>
+          <h3 className="text-3xl font-bold text-cyan-400">6</h3>
+          <p className="mt-2 text-sm text-gray-400">
+            Credentials &amp; Training
+          </p>
         </div>
       </div>
     </section>
