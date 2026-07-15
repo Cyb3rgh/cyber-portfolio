@@ -1,4 +1,4 @@
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaGithub } from "react-icons/fa";
 
 const contacts = [
   {
@@ -12,6 +12,12 @@ const contacts = [
     value: "linkedin.com/in/fayyaddahweesh",
     icon: "💼",
     link: "https://www.linkedin.com/in/fayyaddahweesh/",
+  },
+  {
+    type: "GitHub",
+    value: "github.com/Cyb3rgh",
+    icon: <FaGithub className="text-4xl text-white" />,
+    link: "https://github.com/Cyb3rgh",
   },
   {
     type: "Resume",
@@ -46,6 +52,7 @@ export default function Contact() {
               href={contact.link}
               target={
                 contact.type === "LinkedIn" ||
+                contact.type === "GitHub" ||
                 contact.type === "WhatsApp" ||
                 contact.type === "Resume"
                   ? "_blank"
@@ -53,6 +60,7 @@ export default function Contact() {
               }
               rel={
                 contact.type === "LinkedIn" ||
+                contact.type === "GitHub" ||
                 contact.type === "WhatsApp" ||
                 contact.type === "Resume"
                   ? "noopener noreferrer"
