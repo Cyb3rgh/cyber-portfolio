@@ -38,7 +38,7 @@ export default function Contact() {
     <section id="contact" className="bg-black px-6 py-24 text-white">
       <div className="mx-auto max-w-5xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
-          Contact
+          📞 Contact
         </p>
 
         <h2 className="mb-10 text-3xl font-bold md:text-4xl">

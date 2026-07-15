@@ -1,50 +1,46 @@
-import {
-  FaShieldAlt,
-  FaNetworkWired,
-  FaLinux,
-  FaWindows,
-  FaPython,
-  FaMicrosoft,
-} from "react-icons/fa";
-
-import { SiWireshark } from "react-icons/si";
-
-import { MdAdminPanelSettings } from "react-icons/md";
-
 const skills = [
-  { name: "Cybersecurity", icon: <FaShieldAlt /> },
-  { name: "Networking", icon: <FaNetworkWired /> },
-  { name: "Linux", icon: <FaLinux /> },
-  { name: "Windows Server", icon: <FaWindows /> },
-  { name: "Active Directory", icon: <MdAdminPanelSettings /> },
-  { name: "Azure", icon: <FaMicrosoft /> },
-  { name: "Python", icon: <FaPython /> },
-  { name: "Wireshark", icon: <SiWireshark /> },
+  { name: "Cybersecurity", icon: "🛡️" },
+  { name: "Networking", icon: "🌐" },
+  { name: "Linux", icon: "🐧" },
+  { name: "Windows", icon: "🪟" },
+  { name: "Troubleshooting", icon: "🛠️" },
+  { name: "OSINT", icon: "🔎" },
+  { name: "Reconnaissance", icon: "🛰️" },
+  { name: "Information Gathering", icon: "📋" },
+  { name: "Wireshark", icon: "📡" },
+  { name: "Nmap", icon: "🗺️" },
+  { name: "Metasploit", icon: "💥" },
+  { name: "Burp Suite", icon: "🕷️" },
+  { name: "Kali Linux", icon: "🐉" },
 ];
 
 export default function Skills() {
   return (
     <section id="skills" className="bg-black px-6 py-24 text-white">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
-          Skills
+          🛡️ Skills
         </p>
 
         <h2 className="mb-10 text-3xl font-bold md:text-4xl">
-          Technologies I Work With
+          Technologies & Areas of Expertise
         </h2>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <p className="mb-12 max-w-3xl leading-7 text-gray-400">
+          Hands-on experience gained through IT support, cybersecurity
+          certifications, practical labs, OSINT investigations, and
+          penetration testing training.
+        </p>
+
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+              className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
             >
-              <div className="text-4xl text-cyan-400">
-                {skill.icon}
-              </div>
+              <div className="text-5xl">{skill.icon}</div>
 
-              <h3 className="mt-4 text-xl font-semibold">
+              <h3 className="mt-4 text-lg font-semibold text-white">
                 {skill.name}
               </h3>
             </div>

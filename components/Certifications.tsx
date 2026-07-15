@@ -101,7 +101,7 @@ export default function Certifications() {
     <section id="certifications" className="bg-black px-6 py-24 text-white">
       <div className="mx-auto max-w-7xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
-          Certifications
+          🏆 Certifications
         </p>
 
         <h2 className="mb-4 text-3xl font-bold md:text-4xl">
