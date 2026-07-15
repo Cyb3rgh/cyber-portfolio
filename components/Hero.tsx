@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-24 text-center"
     >
       {/* Background Glow */}
       <div className="absolute left-1/2 top-0 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
@@ -87,7 +87,7 @@ export default function Hero() {
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
           <h3 className="text-3xl font-bold text-cyan-400">6</h3>
           <p className="mt-2 text-sm text-gray-400">
-            Credentials &amp; Training
+            Credentials & Training
           </p>
         </div>
       </div>
