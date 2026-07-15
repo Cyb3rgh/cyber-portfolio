@@ -36,12 +36,6 @@ export default function Hero() {
       <div className="mb-6 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300 backdrop-blur-sm">
         🟢 Available for IT & Cybersecurity Opportunities
       </div>
-
-      {/* Small Heading */}
-      <p className="mb-4 text-sm uppercase tracking-[0.4em] text-cyan-400">
-        Cybersecurity Portfolio
-      </p>
-
       {/* Full Name */}
       <h1 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-5xl font-bold text-transparent md:text-7xl">
         Fayyad Dahweesh
