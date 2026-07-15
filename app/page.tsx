@@ -18,8 +18,8 @@ export default function Home() {
       <Skills />
       <Projects />
       <TryHackMe />
-      <Experience />
       <Certifications />
+      <Experience />
       <Contact />
       <Footer />
     </main>

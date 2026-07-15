@@ -170,14 +170,26 @@ export default function VisitorInfo() {
 
       <div className="grid gap-4 md:grid-cols-2">
         <Info label="IP Address" value={data.ip} />
-        <Info label="Country" value={`${getFlag(data.country)} ${data.country}`} />
+        <Info
+          label="Country"
+          value={`${getFlag(data.country)} ${data.country}`}
+        />
         <Info label="City" value={data.city || "Unknown"} />
         <Info label="Region" value={data.region || "Unknown"} />
         <Info label="ISP" value={data.isp || "Unknown"} />
         <Info label="ASN" value={data.asn || "Unknown"} />
-        <Info label="Coordinates" value={`${data.latitude || "?"}, ${data.longitude || "?"}`} />
-        <Info label="Connection Type" value={data.connectionType || "Unknown"} />
-        <Info label="Security Estimate" value={data.securityStatus || "Unknown"} />
+        <Info
+          label="Coordinates"
+          value={`${data.latitude || "?"}, ${data.longitude || "?"}`}
+        />
+        <Info
+          label="Connection Type"
+          value={data.connectionType || "Unknown"}
+        />
+        <Info
+          label="Security Estimate"
+          value={data.securityStatus || "Unknown"}
+        />
 
         <Info label="Browser" value={browserInfo.browser} />
         <Info label="Operating System" value={browserInfo.os} />
@@ -196,10 +208,17 @@ export default function VisitorInfo() {
         <Info label="Preferred Theme" value={browserInfo.theme} />
       </div>
 
-      <p className="mt-6 text-sm text-gray-500">
-        This dashboard demonstrates how websites can collect publicly available
-        browser and network metadata during normal web requests.
-      </p>
+      <div className="mt-6 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-5">
+        <h4 className="text-lg font-semibold text-yellow-400">
+          ⚠️ Privacy Notice
+        </h4>
+
+        <p className="mt-3 text-sm text-gray-400">
+          Displays publicly available browser and network metadata for
+          educational purposes only. No information is permanently stored or
+          shared.
+        </p>
+      </div>
     </div>
   );
 }
