@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-24 text-center"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-12 md:pt-24 text-center"
     >
       {/* Background Glow */}
       <div className="absolute left-1/2 top-0 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
@@ -25,7 +25,7 @@ export default function Hero() {
           </p>
 
           <p className="mt-3 text-cyan-400">
-            Welcome to Fayyad's Cybersecurity Portfolio
+            Welcome to Fayyad&apos;s Cybersecurity Portfolio
           </p>
         </div>
       </div>
