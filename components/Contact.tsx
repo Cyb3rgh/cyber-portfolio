@@ -1,16 +1,22 @@
-import { FaWhatsapp, FaGithub } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaFilePdf,
+} from "react-icons/fa";
 
 const contacts = [
   {
     type: "Email",
     value: "Fayyad.dh95@gmail.com",
-    icon: "📧",
+    icon: <FaEnvelope className="text-4xl text-red-400" />,
     link: "mailto:Fayyad.dh95@gmail.com",
   },
   {
     type: "LinkedIn",
     value: "linkedin.com/in/fayyaddahweesh",
-    icon: "💼",
+    icon: <FaLinkedin className="text-4xl text-blue-500" />,
     link: "https://www.linkedin.com/in/fayyaddahweesh/",
   },
   {
@@ -22,7 +28,7 @@ const contacts = [
   {
     type: "Resume",
     value: "View Resume",
-    icon: "📄",
+    icon: <FaFilePdf className="text-4xl text-red-500" />,
     link: "/Fayyad_Dahweesh_Technical_Support.pdf",
   },
   {
@@ -38,12 +44,17 @@ export default function Contact() {
     <section id="contact" className="bg-black px-6 py-24 text-white">
       <div className="mx-auto max-w-5xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
-          📞 Contact
+          📬 Contact
         </p>
 
-        <h2 className="mb-10 text-3xl font-bold md:text-4xl">
+        <h2 className="mb-4 text-3xl font-bold md:text-4xl">
           Let's Connect
         </h2>
+
+        <p className="mb-12 max-w-3xl text-gray-400">
+          Open to IT Support, Technical Support, and Cybersecurity opportunities.
+          Feel free to reach out through any of the channels below.
+        </p>
 
         <div className="grid gap-6 md:grid-cols-2">
           {contacts.map((contact) => (
@@ -51,22 +62,16 @@ export default function Contact() {
               key={contact.type}
               href={contact.link}
               target={
-                contact.type === "LinkedIn" ||
-                contact.type === "GitHub" ||
-                contact.type === "WhatsApp" ||
-                contact.type === "Resume"
-                  ? "_blank"
-                  : undefined
+                contact.type === "Email"
+                  ? undefined
+                  : "_blank"
               }
               rel={
-                contact.type === "LinkedIn" ||
-                contact.type === "GitHub" ||
-                contact.type === "WhatsApp" ||
-                contact.type === "Resume"
-                  ? "noopener noreferrer"
-                  : undefined
+                contact.type === "Email"
+                  ? undefined
+                  : "noopener noreferrer"
               }
-              className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+              className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
             >
               <div>{contact.icon}</div>
 

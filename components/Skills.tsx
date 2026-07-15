@@ -6,7 +6,10 @@ const skills = [
   { name: "Troubleshooting", icon: "🛠️" },
   { name: "OSINT", icon: "🔎" },
   { name: "Reconnaissance", icon: "🛰️" },
-  { name: "Information Gathering", icon: "📋" },
+  {
+    name: "Information Gathering & Enumeration",
+    icon: "📋",
+  },
   { name: "Wireshark", icon: "📡" },
   { name: "Nmap", icon: "🗺️" },
   { name: "Metasploit", icon: "💥" },
@@ -22,17 +25,17 @@ export default function Skills() {
           🛡️ Skills
         </p>
 
-        <h2 className="mb-10 text-3xl font-bold md:text-4xl">
+        <h2 className="text-3xl font-bold md:text-4xl">
           Technologies & Areas of Expertise
         </h2>
 
-        <p className="mb-12 max-w-3xl leading-7 text-gray-400">
+        <p className="mt-4 max-w-3xl leading-7 text-gray-400">
           Hands-on experience gained through IT support, cybersecurity
-          certifications, practical labs, OSINT investigations, and
-          penetration testing training.
+          certifications, practical labs, OSINT investigations, and penetration
+          testing training.
         </p>
 
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {skills.map((skill) => (
             <div
               key={skill.name}

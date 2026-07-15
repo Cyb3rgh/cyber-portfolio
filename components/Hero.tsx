@@ -9,7 +9,6 @@ export default function Hero() {
 
       {/* Terminal Banner */}
       <div className="mb-8 w-full max-w-2xl overflow-hidden rounded-xl border border-green-500/20 bg-gray-900/80 shadow-lg shadow-green-500/5 backdrop-blur-sm">
-        {/* Terminal Header */}
         <div className="flex items-center gap-2 border-b border-gray-800 px-4 py-3">
           <div className="h-3 w-3 rounded-full bg-red-500"></div>
           <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
@@ -20,7 +19,6 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Terminal Content */}
         <div className="p-5 font-mono text-left text-sm">
           <p className="text-green-400">
             root@fayyad:~$ ./portfolio.sh
@@ -36,7 +34,8 @@ export default function Hero() {
       <div className="mb-6 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300 backdrop-blur-sm">
         🟢 Available for IT & Cybersecurity Opportunities
       </div>
-      {/* Full Name */}
+
+      {/* Name */}
       <h1 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-5xl font-bold text-transparent md:text-7xl">
         Fayyad Dahweesh
       </h1>
@@ -47,7 +46,7 @@ export default function Hero() {
         <span className="mx-3 text-cyan-400">•</span>
         IT Support Professional
         <span className="mx-3 text-cyan-400">•</span>
-        Cybersecurity Analyst
+        Cybersecurity Professional
       </p>
 
       {/* Description */}
@@ -82,27 +81,33 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Portfolio Statistics */}
+      {/* Statistics */}
       <div className="mt-16 grid w-full max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
           <h3 className="text-3xl font-bold text-cyan-400">112</h3>
-          <p className="mt-2 text-sm text-gray-400">Rooms Completed</p>
+          <p className="mt-2 text-sm text-gray-400">
+            Rooms Completed
+          </p>
         </div>
 
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
           <h3 className="text-3xl font-bold text-cyan-400">Top 5%</h3>
-          <p className="mt-2 text-sm text-gray-400">Global Ranking</p>
+          <p className="mt-2 text-sm text-gray-400">
+            Global Ranking
+          </p>
         </div>
 
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
           <h3 className="text-3xl font-bold text-cyan-400">18</h3>
-          <p className="mt-2 text-sm text-gray-400">Badges Earned</p>
+          <p className="mt-2 text-sm text-gray-400">
+            Badges Earned
+          </p>
         </div>
 
         <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
           <h3 className="text-3xl font-bold text-cyan-400">6</h3>
           <p className="mt-2 text-sm text-gray-400">
-            Credentials &amp; Training
+            Credentials & Training
           </p>
         </div>
       </div>
