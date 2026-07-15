@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fayyad Dahweesh | Cybersecurity Portfolio",
+  title: "Fayyad Dahweesh | IT Support & Cybersecurity Professional",
   description:
-    "Technical Support Specialist and Cybersecurity Professional showcasing hands-on projects, certifications, OSINT tools, and security expertise.",
+    "IT Support professional with 3 years of experience and hands-on cybersecurity expertise in OSINT, penetration testing, security operations, and defensive technologies.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
