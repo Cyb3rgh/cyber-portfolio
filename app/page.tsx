@@ -1,3 +1,4 @@
+import TryHackMe from "@/components/TryHackMe";
 import Certifications from "@/components/Certifications";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
+      <TryHackMe />
       <Experience />
       <Certifications />
       <Contact />
