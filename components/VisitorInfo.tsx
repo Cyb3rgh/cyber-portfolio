@@ -15,39 +15,71 @@ type VisitorData = {
   securityStatus?: string;
 };
 
+type BrowserInfo = {
+  browser: string;
+  os: string;
+  device: string;
+  language: string;
+  timezone: string;
+  screen: string;
+  cpu: string;
+  memory: string;
+  cookies: string;
+  colorDepth: string;
+  touch: string;
+  online: string;
+  doNotTrack: string;
+  theme: string;
+};
+
+type NavigatorWithMemory = Navigator & {
+  deviceMemory?: number;
+};
+
+const loadingBrowserInfo: BrowserInfo = {
+  browser: "Loading...",
+  os: "Loading...",
+  device: "Loading...",
+  language: "Loading...",
+  timezone: "Loading...",
+  screen: "Loading...",
+  cpu: "Loading...",
+  memory: "Loading...",
+  cookies: "Loading...",
+  colorDepth: "Loading...",
+  touch: "Loading...",
+  online: "Loading...",
+  doNotTrack: "Loading...",
+  theme: "Loading...",
+};
+
 export default function VisitorInfo() {
   const [data, setData] = useState<VisitorData>({
     ip: "Loading...",
     country: "Loading...",
   });
 
-  const [browserInfo, setBrowserInfo] = useState({
-    browser: "Loading...",
-    os: "Loading...",
-    device: "Loading...",
-    language: "Loading...",
-    timezone: "Loading...",
-    screen: "Loading...",
-    cpu: "Loading...",
-    memory: "Loading...",
-    cookies: "Loading...",
-    colorDepth: "Loading...",
-    touch: "Loading...",
-    online: "Loading...",
-    doNotTrack: "Loading...",
-    theme: "Loading...",
-  });
+  const [browserInfo, setBrowserInfo] =
+    useState<BrowserInfo>(loadingBrowserInfo);
 
   useEffect(() => {
-    fetch("/api/ip")
-      .then((res) => res.json())
-      .then(async (ipData) => {
-        const geoRes = await fetch(`https://ipwho.is/${ipData.ip}`);
-        const geoData = await geoRes.json();
+    const controller = new AbortController();
+
+    async function loadVisitorData() {
+      try {
+        const ipResponse = await fetch("/api/ip", {
+          signal: controller.signal,
+        });
+        const ipData = await ipResponse.json();
+
+        const geoResponse = await fetch(`https://ipwho.is/${ipData.ip}`, {
+          signal: controller.signal,
+        });
+        const geoData = await geoResponse.json();
 
         const isp = geoData.connection?.isp || "Unknown";
         const org = geoData.connection?.org || "Unknown";
-        const type = geoData.type || "Unknown";
+        const connectionType = geoData.type || "Unknown";
 
         const suspiciousKeywords = [
           "vpn",
@@ -65,7 +97,8 @@ export default function VisitorInfo() {
           "hetzner",
         ];
 
-        const combined = `${isp} ${org} ${type}`.toLowerCase();
+        const combined =
+          `${isp} ${org} ${connectionType}`.toLowerCase();
 
         const isSuspicious = suspiciousKeywords.some((word) =>
           combined.includes(word)
@@ -82,83 +115,96 @@ export default function VisitorInfo() {
             : "Unknown",
           latitude: geoData.latitude,
           longitude: geoData.longitude,
-          connectionType: type,
+          connectionType,
           securityStatus: isSuspicious
             ? "Possible VPN / Proxy / Hosting Provider"
             : "Likely Residential or Mobile ISP",
         });
-      })
-      .catch(() =>
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") {
+          return;
+        }
+
         setData({
           ip: "Unavailable",
           country: "Unavailable",
-        })
-      );
+        });
+      }
+    }
 
-    const userAgent = navigator.userAgent;
+    void loadVisitorData();
 
-    const browser = userAgent.includes("Edg")
-      ? "Microsoft Edge"
-      : userAgent.includes("Chrome")
-      ? "Chrome"
-      : userAgent.includes("Firefox")
-      ? "Firefox"
-      : userAgent.includes("Safari")
-      ? "Safari"
-      : "Unknown";
+    return () => {
+      controller.abort();
+    };
+  }, []);
 
-    const os = userAgent.includes("Windows")
-      ? "Windows"
-      : userAgent.includes("Mac")
-      ? "macOS"
-      : userAgent.includes("Linux")
-      ? "Linux"
-      : userAgent.includes("Android")
-      ? "Android"
-      : userAgent.includes("iPhone")
-      ? "iOS"
-      : "Unknown";
+  useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      const userAgent = navigator.userAgent;
+      const navigatorWithMemory = navigator as NavigatorWithMemory;
 
-    setBrowserInfo({
-      browser,
-      os,
-      device: window.innerWidth < 768 ? "Mobile Device" : "Desktop Device",
-      language: navigator.language,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      screen: `${window.screen.width} x ${window.screen.height}`,
-      cpu: navigator.hardwareConcurrency?.toString() || "Unknown",
-      memory:
-        (navigator as any).deviceMemory
-          ? `${(navigator as any).deviceMemory} GB`
+      const browser = userAgent.includes("Edg")
+        ? "Microsoft Edge"
+        : userAgent.includes("Chrome")
+          ? "Chrome"
+          : userAgent.includes("Firefox")
+            ? "Firefox"
+            : userAgent.includes("Safari")
+              ? "Safari"
+              : "Unknown";
+
+      const os = userAgent.includes("Windows")
+        ? "Windows"
+        : userAgent.includes("Mac")
+          ? "macOS"
+          : userAgent.includes("Linux")
+            ? "Linux"
+            : userAgent.includes("Android")
+              ? "Android"
+              : userAgent.includes("iPhone")
+                ? "iOS"
+                : "Unknown";
+
+      setBrowserInfo({
+        browser,
+        os,
+        device:
+          window.innerWidth < 768 ? "Mobile Device" : "Desktop Device",
+        language: navigator.language,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        screen: `${window.screen.width} x ${window.screen.height}`,
+        cpu: navigator.hardwareConcurrency?.toString() || "Unknown",
+        memory: navigatorWithMemory.deviceMemory
+          ? `${navigatorWithMemory.deviceMemory} GB`
           : "Unknown",
-      cookies: navigator.cookieEnabled ? "Enabled" : "Disabled",
-      colorDepth: `${window.screen.colorDepth}-bit`,
-      touch:
-        navigator.maxTouchPoints > 0
-          ? "Supported"
-          : "Not Supported",
-      online:
-        navigator.onLine
-          ? "Online"
-          : "Offline",
-      doNotTrack:
-        navigator.doNotTrack === "1"
-          ? "Enabled"
-          : "Disabled",
-      theme:
-        window.matchMedia("(prefers-color-scheme: dark)").matches
+        cookies: navigator.cookieEnabled ? "Enabled" : "Disabled",
+        colorDepth: `${window.screen.colorDepth}-bit`,
+        touch:
+          navigator.maxTouchPoints > 0 ? "Supported" : "Not Supported",
+        online: navigator.onLine ? "Online" : "Offline",
+        doNotTrack:
+          navigator.doNotTrack === "1" ? "Enabled" : "Disabled",
+        theme: window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "Dark"
           : "Light",
+      });
     });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
   }, []);
 
   const getFlag = (countryCode: string) => {
-    if (!countryCode || countryCode === "Unknown") return "🌍";
+    if (!countryCode || countryCode === "Unknown") {
+      return "\u{1F30D}";
+    }
 
     return countryCode
       .toUpperCase()
-      .replace(/./g, (char) =>
-        String.fromCodePoint(127397 + char.charCodeAt(0))
+      .replace(/./g, (character) =>
+        String.fromCodePoint(127397 + character.charCodeAt(0))
       );
   };
 
@@ -170,22 +216,27 @@ export default function VisitorInfo() {
 
       <div className="grid gap-4 md:grid-cols-2">
         <Info label="IP Address" value={data.ip} />
+
         <Info
           label="Country"
           value={`${getFlag(data.country)} ${data.country}`}
         />
+
         <Info label="City" value={data.city || "Unknown"} />
         <Info label="Region" value={data.region || "Unknown"} />
         <Info label="ISP" value={data.isp || "Unknown"} />
         <Info label="ASN" value={data.asn || "Unknown"} />
+
         <Info
           label="Coordinates"
-          value={`${data.latitude || "?"}, ${data.longitude || "?"}`}
+          value={`${data.latitude ?? "?"}, ${data.longitude ?? "?"}`}
         />
+
         <Info
           label="Connection Type"
           value={data.connectionType || "Unknown"}
         />
+
         <Info
           label="Security Estimate"
           value={data.securityStatus || "Unknown"}
@@ -197,7 +248,6 @@ export default function VisitorInfo() {
         <Info label="Language" value={browserInfo.language} />
         <Info label="Timezone" value={browserInfo.timezone} />
         <Info label="Screen Resolution" value={browserInfo.screen} />
-
         <Info label="CPU Cores" value={browserInfo.cpu} />
         <Info label="Device Memory" value={browserInfo.memory} />
         <Info label="Cookies" value={browserInfo.cookies} />
@@ -210,7 +260,7 @@ export default function VisitorInfo() {
 
       <div className="mt-6 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-5">
         <h4 className="text-lg font-semibold text-yellow-400">
-          ⚠️ Privacy Notice
+          Privacy Notice
         </h4>
 
         <p className="mt-3 text-sm text-gray-400">

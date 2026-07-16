@@ -1,5 +1,21 @@
 const projects = [
   {
+    title: "Phishing URL Analyzer",
+    description:
+      "Built a defensive phishing-analysis tool that combines local structural URL inspection with live VirusTotal threat intelligence, risk scoring, report caching, and API quota protection.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Phishing Analysis",
+      "VirusTotal API",
+      "Threat Intelligence",
+      "Defensive Security",
+    ],
+    liveUrl: "https://phishing-url-analyzer-three.vercel.app",
+    githubUrl: "https://github.com/Cyb3rgh/phishing-url-analyzer",
+    featured: true,
+  },
+  {
     title: "OSINT Intelligence Dashboard",
     description:
       "Built an interactive OSINT dashboard that displays GeoIP intelligence, browser and device information, ISP and ASN data, privacy indicators, and a basic security posture assessment.",
@@ -12,7 +28,7 @@ const projects = [
     ],
     liveUrl: "/osint-demo",
     githubUrl: "https://github.com/Cyb3rgh/cyber-portfolio",
-    featured: true,
+    featured: false,
   },
   {
     title: "Cybersecurity Portfolio Platform",
@@ -40,7 +56,7 @@ export default function Projects() {
     >
       <div className="mx-auto max-w-6xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
-          💻 Projects
+          Projects
         </p>
 
         <h2 className="text-3xl font-bold md:text-4xl">
@@ -49,7 +65,8 @@ export default function Projects() {
 
         <p className="mt-4 max-w-3xl leading-7 text-gray-400">
           Hands-on technical projects demonstrating cybersecurity awareness,
-          OSINT concepts, web development, version control, and deployment.
+          threat intelligence, OSINT concepts, secure web development, version
+          control, and deployment.
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -93,9 +110,7 @@ export default function Projects() {
                 <a
                   href={project.liveUrl}
                   target={
-                    project.liveUrl.startsWith("http")
-                      ? "_blank"
-                      : undefined
+                    project.liveUrl.startsWith("http") ? "_blank" : undefined
                   }
                   rel={
                     project.liveUrl.startsWith("http")
@@ -104,7 +119,7 @@ export default function Projects() {
                   }
                   className="inline-flex items-center justify-center rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-cyan-400"
                 >
-                  Live Demo →
+                  Live Demo &rarr;
                 </a>
 
                 <a
@@ -113,7 +128,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-2 text-sm font-semibold text-gray-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300"
                 >
-                  GitHub Repository →
+                  GitHub Repository &rarr;
                 </a>
               </div>
             </article>
@@ -122,8 +137,8 @@ export default function Projects() {
 
         <div className="mt-10 rounded-2xl border border-dashed border-gray-800 bg-gray-900/20 p-6 text-center">
           <p className="text-gray-400">
-            Future projects will include phishing analysis, Active Directory,
-            Splunk investigations, and Wazuh monitoring.
+            Future projects will include Active Directory labs, Splunk
+            investigations, Wazuh monitoring, and SOC case studies.
           </p>
         </div>
       </div>
