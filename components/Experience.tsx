@@ -4,7 +4,7 @@ const experiences = [
     role: "Technical Support",
     company: "SamaLink",
     highlights: [
-      "Technical Support",
+      "End-User Support",
       "System Troubleshooting",
       "Software Deployment",
       "Network Connectivity",
