@@ -1,51 +1,81 @@
 const experiences = [
   {
-    year: "Current Focus",
-    title: "Technical Support & IT Support",
-    description:
-      "Building practical experience in troubleshooting, user support, system administration, networking fundamentals, and supporting real-world IT environments.",
+    period: "2023 – Present",
+    role: "Technical Support",
+    company: "SamaLink",
+    highlights: [
+      "Technical Support",
+      "System Troubleshooting",
+      "Software Deployment",
+      "Network Connectivity",
+    ],
   },
   {
-    year: "Cybersecurity Direction",
-    title: "SOC & Cybersecurity Learning",
-    description:
-      "Developing hands-on cybersecurity skills through labs, TryHackMe rooms, SOC concepts, log analysis, SIEM fundamentals, and incident response practice.",
+    period: "2022 – 2023",
+    role: "IT Service Desk Specialist",
+    company: "AUBMC",
+    highlights: [
+      "1200+ Tickets Resolved",
+      "800 Workstations Deployed",
+      "Epic EHR Rollout",
+      "TeamDynamix",
+    ],
   },
   {
-    year: "Professional Growth",
-    title: "Infrastructure & Security Foundations",
-    description:
-      "Strengthening knowledge in Windows, Linux, networking, Active Directory concepts, and security fundamentals to support a transition into cybersecurity roles.",
+    period: "2025 – Present",
+    role: "Cybersecurity Development",
+    company: "Labs & Certifications",
+    highlights: [
+      "eJPTv2 Certified",
+      "TryHackMe Top 5%",
+      "OSINT Projects",
+      "Security Labs",
+    ],
   },
 ];
 
 export default function Experience() {
   return (
     <section id="experience" className="bg-black px-6 py-24 text-white">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
           💼 Experience
         </p>
 
         <h2 className="mb-10 text-3xl font-bold md:text-4xl">
-          My Professional Journey
+          Professional Journey
         </h2>
 
-        <div className="space-y-6">
-          {experiences.map((item) => (
+        <div className="grid gap-8 md:grid-cols-3">
+          {experiences.map((experience) => (
             <div
-              key={item.title}
-              className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 transition hover:border-cyan-400"
+              key={experience.role}
+              className="rounded-2xl border border-gray-800 bg-gray-900/50 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
             >
-              <p className="text-sm text-cyan-400">{item.year}</p>
+              <p className="text-sm text-cyan-400">
+                {experience.period}
+              </p>
 
-              <h3 className="mt-2 text-xl font-semibold">
-                {item.title}
+              <h3 className="mt-3 text-xl font-bold">
+                {experience.role}
               </h3>
 
-              <p className="mt-3 text-gray-400">
-                {item.description}
+              <p className="mt-1 text-gray-400">
+                {experience.company}
               </p>
+
+              <div className="mt-6 space-y-3">
+                {experience.highlights.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 text-gray-300"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-cyan-400" />
+
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
