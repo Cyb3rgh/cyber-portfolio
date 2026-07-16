@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-12 md:pt-24 text-center"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-12 text-center md:pt-24"
     >
       {/* Background Glow */}
       <div className="absolute left-1/2 top-0 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
@@ -10,16 +10,16 @@ export default function Hero() {
       {/* Terminal Banner */}
       <div className="mb-8 w-full max-w-2xl overflow-hidden rounded-xl border border-green-500/20 bg-gray-900/80 shadow-lg shadow-green-500/5 backdrop-blur-sm">
         <div className="flex items-center gap-2 border-b border-gray-800 px-4 py-3">
-          <div className="h-3 w-3 rounded-full bg-red-500"></div>
-          <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-          <div className="h-3 w-3 rounded-full bg-green-500"></div>
+          <div className="h-3 w-3 rounded-full bg-red-500" />
+          <div className="h-3 w-3 rounded-full bg-yellow-500" />
+          <div className="h-3 w-3 rounded-full bg-green-500" />
 
           <span className="ml-4 text-xs text-gray-500">
             terminal
           </span>
         </div>
 
-        <div className="p-5 font-mono text-left text-sm">
+        <div className="p-5 text-left font-mono text-sm">
           <p className="text-green-400">
             root@fayyad:~$ ./portfolio.sh
           </p>
@@ -79,37 +79,6 @@ export default function Hero() {
         >
           OSINT Demo
         </a>
-      </div>
-
-      {/* Statistics */}
-      <div className="mt-16 grid w-full max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
-        <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
-          <h3 className="text-3xl font-bold text-cyan-400">112</h3>
-          <p className="mt-2 text-sm text-gray-400">
-            Rooms Completed
-          </p>
-        </div>
-
-        <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
-          <h3 className="text-3xl font-bold text-cyan-400">Top 5%</h3>
-          <p className="mt-2 text-sm text-gray-400">
-            Global Ranking
-          </p>
-        </div>
-
-        <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
-          <h3 className="text-3xl font-bold text-cyan-400">18</h3>
-          <p className="mt-2 text-sm text-gray-400">
-            Badges Earned
-          </p>
-        </div>
-
-        <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50">
-          <h3 className="text-3xl font-bold text-cyan-400">6</h3>
-          <p className="mt-2 text-sm text-gray-400">
-            Credentials & Training
-          </p>
-        </div>
       </div>
     </section>
   );
