@@ -12,10 +12,60 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://fayyad-cyber-vert.vercel.app";
+
+const siteTitle = "Fayyad Dahweesh | IT Support & Cybersecurity";
+
+const siteDescription =
+  "Portfolio of Fayyad Dahweesh, an IT Support professional with hands-on cybersecurity projects in OSINT, penetration testing, security operations, and defensive security.";
+
 export const metadata: Metadata = {
-  title: "Fayyad Dahweesh | IT Support & Cybersecurity Professional",
-  description:
-    "IT Support professional with 3 years of experience and hands-on cybersecurity expertise in OSINT, penetration testing, security operations, and defensive technologies.",
+  metadataBase: new URL(siteUrl),
+
+  title: {
+    default: siteTitle,
+    template: "%s | Fayyad Dahweesh",
+  },
+
+  description: siteDescription,
+
+  applicationName: "Fayyad Dahweesh Portfolio",
+
+  authors: [
+    {
+      name: "Fayyad Dahweesh",
+      url: siteUrl,
+    },
+  ],
+
+  creator: "Fayyad Dahweesh",
+  publisher: "Fayyad Dahweesh",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Fayyad Dahweesh Portfolio",
+    title: siteTitle,
+    description: siteDescription,
+  },
+
+  twitter: {
+    card: "summary",
+    title: siteTitle,
+    description: siteDescription,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -28,9 +78,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
-      </body>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }
