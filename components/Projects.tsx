@@ -1,5 +1,21 @@
 const projects = [
   {
+    title: "Splunk SOC Incident Investigation",
+    description:
+      "Investigated a simulated Windows account compromise in Splunk, identified brute-force and unauthorized RDP activity, reconstructed the attack timeline, mapped findings to MITRE ATT&CK, and documented containment recommendations.",
+    tags: [
+      "Splunk",
+      "SPL",
+      "SOC Investigation",
+      "Windows Security",
+      "Incident Response",
+      "MITRE ATT&CK",
+    ],
+    liveUrl: "https://github.com/Cyb3rgh/splunk-soc-investigation",
+    githubUrl: "https://github.com/Cyb3rgh/splunk-soc-investigation",
+    liveLabel: "View Case Study",
+  },
+  {
     title: "Phishing URL Analyzer",
     description:
       "Built a defensive phishing-analysis tool that combines local structural URL inspection with live VirusTotal threat intelligence, risk scoring, report caching, and API quota protection.",
@@ -13,7 +29,7 @@ const projects = [
     ],
     liveUrl: "https://phishing-url-analyzer-three.vercel.app",
     githubUrl: "https://github.com/Cyb3rgh/phishing-url-analyzer",
-    featured: true,
+    liveLabel: "Live Demo",
   },
   {
     title: "OSINT Intelligence Dashboard",
@@ -28,7 +44,7 @@ const projects = [
     ],
     liveUrl: "/osint-demo",
     githubUrl: "https://github.com/Cyb3rgh/cyber-portfolio",
-    featured: false,
+    liveLabel: "Live Demo",
   },
   {
     title: "Cybersecurity Portfolio Platform",
@@ -44,7 +60,7 @@ const projects = [
     ],
     liveUrl: "https://fayyad-cyber-vert.vercel.app",
     githubUrl: "https://github.com/Cyb3rgh/cyber-portfolio",
-    featured: false,
+    liveLabel: "Live Website",
   },
 ];
 
@@ -64,81 +80,73 @@ export default function Projects() {
         </h2>
 
         <p className="mt-4 max-w-3xl leading-7 text-gray-400">
-          Hands-on technical projects demonstrating cybersecurity awareness,
-          threat intelligence, OSINT concepts, secure web development, version
-          control, and deployment.
+          Hands-on projects demonstrating SOC investigation, threat
+          intelligence, incident response, OSINT, secure web development,
+          version control, and deployment.
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {projects.map((project) => (
-            <article
-              key={project.title}
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/50 p-7 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10"
-            >
-              {project.featured && (
-                <div className="absolute right-5 top-5 rounded-full border border-green-500/30 bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400">
-                  Featured Project
-                </div>
-              )}
+          {projects.map((project) => {
+            const isExternalLink = project.liveUrl.startsWith("http");
 
-              <div className="pr-16">
-                <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-400">
-                  Security Project
+            return (
+              <article
+                key={project.title}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/50 p-7 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10"
+              >
+                <div>
+                  <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-400">
+                    Security Project
+                  </p>
+
+                  <h3 className="mt-3 text-2xl font-semibold text-white">
+                    {project.title}
+                  </h3>
+                </div>
+
+                <p className="mt-5 flex-grow leading-7 text-gray-400">
+                  {project.description}
                 </p>
 
-                <h3 className="mt-3 text-2xl font-semibold text-white">
-                  {project.title}
-                </h3>
-              </div>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-sm text-cyan-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-              <p className="mt-5 flex-grow leading-7 text-gray-400">
-                {project.description}
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-sm text-cyan-300"
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href={project.liveUrl}
+                    target={isExternalLink ? "_blank" : undefined}
+                    rel={isExternalLink ? "noopener noreferrer" : undefined}
+                    className="inline-flex items-center justify-center rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-cyan-400"
                   >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+                    {project.liveLabel} &rarr;
+                  </a>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={project.liveUrl}
-                  target={
-                    project.liveUrl.startsWith("http") ? "_blank" : undefined
-                  }
-                  rel={
-                    project.liveUrl.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className="inline-flex items-center justify-center rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-cyan-400"
-                >
-                  Live Demo &rarr;
-                </a>
-
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-2 text-sm font-semibold text-gray-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300"
-                >
-                  GitHub Repository &rarr;
-                </a>
-              </div>
-            </article>
-          ))}
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-2 text-sm font-semibold text-gray-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300"
+                  >
+                    GitHub Repository &rarr;
+                  </a>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-10 rounded-2xl border border-dashed border-gray-800 bg-gray-900/20 p-6 text-center">
           <p className="text-gray-400">
-            Future projects will include Active Directory labs, Splunk
-            investigations, Wazuh monitoring, and SOC case studies.
+            Future projects will include Active Directory security labs, Wazuh
+            monitoring, additional Splunk investigations, and SOC case studies.
           </p>
         </div>
       </div>
