@@ -1,5 +1,22 @@
 const projects = [
   {
+    title: "Wazuh SIEM Detection Lab",
+    description:
+      "Deployed a Wazuh SIEM environment to collect Windows and Sysmon telemetry, detect suspicious PowerShell, CMD, authentication, and Active Directory activity, analyze vulnerabilities, and investigate a custom detection rule mapped to MITRE ATT&CK.",
+    tags: [
+      "Wazuh",
+      "SIEM",
+      "Sysmon",
+      "Windows Server",
+      "Threat Detection",
+      "MITRE ATT&CK",
+    ],
+    liveUrl:
+      "https://github.com/Cyb3rgh/wazuh-siem-detection-lab/blob/main/Fayyad-Dahweesh-Wazuh-SIEM-Project-Report.pdf",
+    githubUrl: "https://github.com/Cyb3rgh/wazuh-siem-detection-lab",
+    liveLabel: "View PDF Report",
+  },
+  {
     title: "CyberLab Enterprise",
     description:
       "Built an isolated enterprise lab featuring Windows Server 2022, Active Directory, Group Policy, centralized Windows event collection, Splunk Enterprise monitoring, and Kali Linux security validation.",
@@ -96,8 +113,9 @@ export default function Projects() {
 
         <p className="mt-4 max-w-3xl leading-7 text-gray-400">
           Hands-on projects demonstrating enterprise infrastructure, Windows
-          security monitoring, SOC investigation, threat intelligence, incident
-          response, OSINT, secure web development, and deployment.
+          security monitoring, SOC investigation, threat detection,
+          vulnerability analysis, incident response, OSINT, secure web
+          development, and deployment.
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -162,8 +180,8 @@ export default function Projects() {
 
         <div className="mt-10 rounded-2xl border border-dashed border-gray-800 bg-gray-900/20 p-6 text-center">
           <p className="text-gray-400">
-            Future projects will include Wazuh monitoring, Microsoft Sentinel,
-            additional Splunk investigations, and SOC automation.
+            Future projects will include Microsoft Sentinel, additional Splunk
+            investigations, cloud security labs, and SOC automation.
           </p>
         </div>
       </div>
