@@ -1,5 +1,23 @@
 const projects = [
   {
+    title: "Microsoft 365 Enterprise Administration & Security Lab",
+    description:
+      "Built a cloud-only Microsoft 365 Business Premium enterprise lab integrating Entra ID, Intune, Conditional Access, Defender for Business, Exchange Online, SharePoint, OneDrive, and Microsoft Graph PowerShell. Implemented MFA, device compliance, endpoint security, EDR investigation, automation, and practical IT support workflows.",
+    tags: [
+      "Microsoft 365",
+      "Entra ID",
+      "Microsoft Intune",
+      "Defender for Business",
+      "Conditional Access",
+      "Microsoft Graph",
+      "PowerShell",
+      "Endpoint Security",
+    ],
+    liveUrl:
+      "https://github.com/Cyb3rgh/Microsoft-365-Enterprise-Security-Lab",
+    liveLabel: "View Project",
+  },
+  {
     title: "Wazuh SIEM Detection Lab",
     description:
       "Deployed a Wazuh SIEM environment to collect Windows and Sysmon telemetry, detect suspicious PowerShell, CMD, authentication, and Active Directory activity, analyze vulnerabilities, and investigate a custom detection rule mapped to MITRE ATT&CK.",
@@ -108,14 +126,15 @@ export default function Projects() {
         </p>
 
         <h2 className="text-3xl font-bold md:text-4xl">
-          Practical Cybersecurity Projects
+          Practical IT & Cybersecurity Projects
         </h2>
 
         <p className="mt-4 max-w-3xl leading-7 text-gray-400">
-          Hands-on projects demonstrating enterprise infrastructure, Windows
-          security monitoring, SOC investigation, threat detection,
-          vulnerability analysis, incident response, OSINT, secure web
-          development, and deployment.
+          Hands-on projects demonstrating Microsoft 365 administration,
+          identity and access management, endpoint management, endpoint
+          security, SIEM monitoring, SOC investigation, threat detection,
+          incident response, PowerShell automation, OSINT, and secure web
+          development.
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -176,13 +195,6 @@ export default function Projects() {
               </article>
             );
           })}
-        </div>
-
-        <div className="mt-10 rounded-2xl border border-dashed border-gray-800 bg-gray-900/20 p-6 text-center">
-          <p className="text-gray-400">
-            Future projects will include Microsoft Sentinel, additional Splunk
-            investigations, cloud security labs, and SOC automation.
-          </p>
         </div>
       </div>
     </section>
