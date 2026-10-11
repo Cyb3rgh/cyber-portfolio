@@ -7,19 +7,23 @@ export default function About() {
         </p>
 
         <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-          IT Support Professional Transitioning into Cybersecurity
+          IT Support - Microsoft 365 & Cybersecurity Professional
         </h2>
 
         <p className="max-w-3xl text-lg leading-8 text-gray-300">
-          3 years of IT Support experience combined with hands-on cybersecurity
-          training in penetration testing, OSINT, security operations, and
-          defensive security technologies.
+          IT Support and Technical Support professional with 3+ years of
+          hands-on experience supporting users, endpoints, applications, and
+          enterprise IT environments. My experience includes troubleshooting,
+          incident management, Microsoft 365 administration, endpoint
+          management, networking, and technical support operations.
         </p>
 
         <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-300">
-          Passionate about continuous learning and building practical
-          cybersecurity solutions through labs, certifications, and real-world
-          projects.
+          I also have practical cybersecurity experience across Microsoft
+          Defender, Active Directory security, SIEM monitoring with Splunk and
+          Wazuh, endpoint investigation, vulnerability assessment, and security
+          labs. I am eJPTv2 certified and continue developing my skills through
+          hands-on projects and technical labs.
         </p>
       </div>
     </section>

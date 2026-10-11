@@ -1,12 +1,13 @@
 const projects = [
   {
     title: "Microsoft 365 Enterprise Administration & Security Lab",
+    category: "Microsoft 365 / Cloud Security",
     description:
-      "Built a cloud-only Microsoft 365 Business Premium enterprise lab integrating Entra ID, Intune, Conditional Access, Defender for Business, Exchange Online, SharePoint, OneDrive, and Microsoft Graph PowerShell. Implemented MFA, device compliance, endpoint security, EDR investigation, automation, and practical IT support workflows.",
+      "Built a cloud-only Microsoft 365 Business Premium lab covering identity, endpoint management, collaboration, security, automation, and IT support workflows. Implemented Entra ID, Intune, Conditional Access, Defender for Business, MFA, compliance policies, security baselines, application deployment, Windows Update management, and Microsoft Graph PowerShell reporting.",
     tags: [
       "Microsoft 365",
       "Entra ID",
-      "Microsoft Intune",
+      "Intune",
       "Defender for Business",
       "Conditional Access",
       "Microsoft Graph",
@@ -18,31 +19,16 @@ const projects = [
     liveLabel: "View Project",
   },
   {
-    title: "Wazuh SIEM Detection Lab",
+    title: "CyberLab Enterprise — Active Directory & Splunk",
+    category: "Enterprise Security Lab",
     description:
-      "Deployed a Wazuh SIEM environment to collect Windows and Sysmon telemetry, detect suspicious PowerShell, CMD, authentication, and Active Directory activity, analyze vulnerabilities, and investigate a custom detection rule mapped to MITRE ATT&CK.",
-    tags: [
-      "Wazuh",
-      "SIEM",
-      "Sysmon",
-      "Windows Server",
-      "Threat Detection",
-      "MITRE ATT&CK",
-    ],
-    liveUrl:
-      "https://github.com/Cyb3rgh/wazuh-siem-detection-lab/blob/main/Fayyad-Dahweesh-Wazuh-SIEM-Project-Report.pdf",
-    githubUrl: "https://github.com/Cyb3rgh/wazuh-siem-detection-lab",
-    liveLabel: "View PDF Report",
-  },
-  {
-    title: "CyberLab Enterprise",
-    description:
-      "Built an isolated enterprise lab featuring Windows Server 2022, Active Directory, Group Policy, centralized Windows event collection, Splunk Enterprise monitoring, and Kali Linux security validation.",
+      "Built an isolated enterprise environment with Windows Server 2022, Active Directory, Group Policy, Windows auditing, PowerShell logging, centralized event monitoring with Splunk Enterprise, and Kali Linux for controlled security validation.",
     tags: [
       "Windows Server 2022",
       "Active Directory",
       "Group Policy",
       "Splunk Enterprise",
+      "PowerShell Logging",
       "Windows Security",
       "Kali Linux",
     ],
@@ -51,8 +37,9 @@ const projects = [
   },
   {
     title: "Splunk SOC Incident Investigation",
+    category: "SOC / Incident Investigation",
     description:
-      "Investigated a simulated Windows account compromise in Splunk, identified brute-force and unauthorized RDP activity, reconstructed the attack timeline, mapped findings to MITRE ATT&CK, and documented containment recommendations.",
+      "Investigated a simulated Windows account compromise using Splunk, identified brute-force attempts and unauthorized RDP activity, reconstructed the attack timeline, mapped findings to MITRE ATT&CK, and documented containment recommendations.",
     tags: [
       "Splunk",
       "SPL",
@@ -66,9 +53,28 @@ const projects = [
     liveLabel: "View Case Study",
   },
   {
-    title: "Phishing URL Analyzer",
+    title: "Wazuh SIEM Detection Lab",
+    category: "SIEM / Threat Detection",
     description:
-      "Built a defensive phishing-analysis tool that combines local structural URL inspection with live VirusTotal threat intelligence, risk scoring, report caching, and API quota protection.",
+      "Deployed a Wazuh SIEM environment with a Windows endpoint, configured File Integrity Monitoring, created and validated a custom detection rule, and built dashboards to investigate generated security events and alerts.",
+    tags: [
+      "Wazuh",
+      "SIEM",
+      "File Integrity Monitoring",
+      "Windows Server",
+      "Custom Detection Rules",
+      "Security Monitoring",
+    ],
+    liveUrl:
+      "https://github.com/Cyb3rgh/wazuh-siem-detection-lab/blob/main/Fayyad-Dahweesh-Wazuh-SIEM-Project-Report.pdf",
+    githubUrl: "https://github.com/Cyb3rgh/wazuh-siem-detection-lab",
+    liveLabel: "View PDF Report",
+  },
+  {
+    title: "Phishing URL Analyzer",
+    category: "Defensive Security Tool",
+    description:
+      "Built a defensive phishing-analysis application combining local URL inspection with live VirusTotal threat intelligence, automated risk scoring, report caching, and API quota protection.",
     tags: [
       "Next.js",
       "TypeScript",
@@ -83,8 +89,9 @@ const projects = [
   },
   {
     title: "OSINT Intelligence Dashboard",
+    category: "OSINT / Intelligence",
     description:
-      "Built an interactive OSINT dashboard that displays GeoIP intelligence, browser and device information, ISP and ASN data, privacy indicators, and a basic security posture assessment.",
+      "Built an interactive OSINT dashboard displaying GeoIP intelligence, browser and device information, ISP and ASN data, privacy indicators, and a basic security posture assessment.",
     tags: [
       "Next.js",
       "TypeScript",
@@ -98,8 +105,9 @@ const projects = [
   },
   {
     title: "Cybersecurity Portfolio Platform",
+    category: "Web Development / Personal Branding",
     description:
-      "Designed, developed, documented, and deployed a responsive cybersecurity portfolio to showcase projects, verified certifications, TryHackMe achievements, technical skills, and professional experience.",
+      "Designed and deployed a responsive technical portfolio to showcase IT support experience, Microsoft 365 administration, cybersecurity projects, certifications, technical skills, and hands-on lab documentation.",
     tags: [
       "Next.js",
       "React",
@@ -131,10 +139,9 @@ export default function Projects() {
 
         <p className="mt-4 max-w-3xl leading-7 text-gray-400">
           Hands-on projects demonstrating Microsoft 365 administration,
-          identity and access management, endpoint management, endpoint
-          security, SIEM monitoring, SOC investigation, threat detection,
-          incident response, PowerShell automation, OSINT, and secure web
-          development.
+          enterprise IT, identity and endpoint security, SIEM monitoring,
+          incident investigation, threat detection, automation, OSINT, and
+          defensive security.
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -148,7 +155,7 @@ export default function Projects() {
               >
                 <div>
                   <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-400">
-                    Security Project
+                    {project.category}
                   </p>
 
                   <h3 className="mt-3 text-2xl font-semibold text-white">
@@ -181,16 +188,17 @@ export default function Projects() {
                     {project.liveLabel} &rarr;
                   </a>
 
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-2 text-sm font-semibold text-gray-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300"
-                    >
-                      GitHub Repository &rarr;
-                    </a>
-                  )}
+                  {project.githubUrl &&
+                    project.githubUrl !== project.liveUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-2 text-sm font-semibold text-gray-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300"
+                      >
+                        GitHub Repository &rarr;
+                      </a>
+                    )}
                 </div>
               </article>
             );

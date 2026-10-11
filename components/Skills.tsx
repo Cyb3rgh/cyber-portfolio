@@ -4,38 +4,63 @@ const skillGroups = [
     context: "Professional experience",
     icon: "🖥️",
     description:
-      "Supporting users, diagnosing technical issues, and working across operating systems and network environments.",
+      "Supporting users, troubleshooting endpoints, and working across enterprise IT, operating systems, and network environments.",
     skills: [
-      "Technical troubleshooting",
-      "Windows support",
-      "Networking and TCP/IP",
-      "Linux fundamentals",
+      "Technical Support & Troubleshooting",
+      "Windows Support",
+      "Hardware & Software Support",
+      "Remote & On-Site Support",
+      "Networking, TCP/IP, DNS & DHCP",
+      "Active Directory & Group Policy",
     ],
   },
   {
-    title: "Security Analysis & OSINT",
-    context: "Projects and investigations",
-    icon: "🔎",
+    title: "Microsoft 365 & Endpoint Management",
+    context: "Administration and security labs",
+    icon: "☁️",
     description:
-      "Collecting, validating, and analyzing publicly available and network-based information.",
+      "Administering cloud identities, endpoints, collaboration services, and security controls across Microsoft 365 environments.",
     skills: [
-      "OSINT investigations",
-      "Reconnaissance",
-      "Information gathering and enumeration",
-      "Wireshark traffic analysis",
+      "Microsoft 365 Administration",
+      "Microsoft Entra ID",
+      "Microsoft Intune",
+      "Conditional Access & MFA",
+      "Microsoft Defender for Business",
+      "Exchange Online & SharePoint",
+      "OneDrive",
+      "Microsoft Graph & PowerShell",
     ],
   },
   {
-    title: "Security Testing",
+    title: "Security Operations",
+    context: "Detection and investigation labs",
+    icon: "🔐",
+    description:
+      "Monitoring security events, investigating endpoint activity, and working with SIEM and defensive security technologies.",
+    skills: [
+      "Splunk SIEM",
+      "Wazuh SIEM",
+      "Windows Event Analysis",
+      "Endpoint Investigation",
+      "PowerShell Logging",
+      "Network Security",
+      "MITRE ATT&CK",
+    ],
+  },
+  {
+    title: "Security Testing & Analysis",
     context: "Training and practical labs",
     icon: "🛡️",
     description:
-      "Applying offensive-security tools in controlled environments to understand vulnerabilities and attack paths.",
+      "Using security testing and analysis tools in controlled environments to understand vulnerabilities, attack paths, and network activity.",
     skills: [
-      "Nmap network scanning",
-      "Burp Suite web testing",
-      "Metasploit lab exercises",
-      "Kali Linux tooling",
+      "Nmap",
+      "Burp Suite",
+      "Metasploit",
+      "Kali Linux",
+      "Wireshark",
+      "Vulnerability Assessment",
+      "OSINT & Reconnaissance",
     ],
   },
 ];
@@ -53,12 +78,12 @@ export default function Skills() {
         </h2>
 
         <p className="mt-4 max-w-3xl leading-7 text-gray-400">
-          Skills organized by how they have been applied through professional
-          IT support, cybersecurity projects, investigations, training, and
-          practical labs.
+          Skills developed through professional IT support, Microsoft 365
+          administration, cybersecurity projects, security investigations,
+          and practical technical labs.
         </p>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {skillGroups.map((group) => (
             <article
               key={group.title}

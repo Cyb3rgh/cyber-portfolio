@@ -25,14 +25,14 @@ export default function Hero() {
           </p>
 
           <p className="mt-3 text-cyan-400">
-            Welcome to Fayyad&apos;s Cybersecurity Portfolio
+            Welcome to Fayyad&apos;s IT & Cybersecurity Portfolio
           </p>
         </div>
       </div>
 
       {/* Availability Badge */}
       <div className="mb-6 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300 backdrop-blur-sm">
-        🟢 Available for IT & Cybersecurity Opportunities
+        🟢 Available for IT Support, Microsoft 365 & Cybersecurity Opportunities
       </div>
 
       {/* Name */}
@@ -41,43 +41,46 @@ export default function Hero() {
       </h1>
 
       {/* Professional Titles */}
-      <p className="mt-6 max-w-3xl text-lg font-medium text-gray-200 md:text-xl">
+      <p className="mt-6 max-w-4xl text-lg font-medium text-gray-200 md:text-xl">
+        IT Support Specialist
+        <span className="mx-3 text-cyan-400">•</span>
         Technical Support Specialist
         <span className="mx-3 text-cyan-400">•</span>
-        IT Support Professional
+        Microsoft 365
         <span className="mx-3 text-cyan-400">•</span>
-        Cybersecurity Professional
+        Cybersecurity
       </p>
 
       {/* Description */}
-      <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-500">
-        Hands-on experience across IT Support, Networking, OSINT,
-        Penetration Testing, and Security Operations.
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+        IT professional with hands-on experience in enterprise technical support,
+        Microsoft 365 administration, endpoint management, networking, and
+        cybersecurity operations.
       </p>
 
       {/* Buttons */}
       <div className="mt-10 flex flex-wrap justify-center gap-4">
         <a
-          href="/Fayyad_Dahweesh_Technical_Support.pdf"
+          href="#projects"
+          className="rounded-lg bg-cyan-500 px-6 py-3 font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/30"
+        >
+          View Projects
+        </a>
+
+        <a
+          href="/Fayyad_Dahweesh_CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-lg bg-cyan-500 px-6 py-3 font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/30"
+          className="rounded-lg border border-cyan-500 px-6 py-3 font-semibold text-cyan-400 transition duration-300 hover:-translate-y-1 hover:bg-cyan-500 hover:text-black"
         >
           View Resume
         </a>
 
         <a
           href="#contact"
-          className="rounded-lg border border-cyan-500 px-6 py-3 font-semibold text-cyan-400 transition duration-300 hover:-translate-y-1 hover:bg-cyan-500 hover:text-black"
-        >
-          Contact Me
-        </a>
-
-        <a
-          href="/osint-demo"
           className="rounded-lg border border-purple-500 px-6 py-3 font-semibold text-purple-400 transition duration-300 hover:-translate-y-1 hover:bg-purple-500 hover:text-black"
         >
-          OSINT Demo
+          Contact Me
         </a>
       </div>
     </section>

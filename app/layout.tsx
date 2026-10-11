@@ -13,24 +13,39 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = "https://fayyad-cyber-vert.vercel.app";
-const siteTitle = "Fayyad Dahweesh | IT Support & Cybersecurity";
+
+const siteTitle =
+  "Fayyad Dahweesh | IT Support, Microsoft 365 & Cybersecurity";
+
 const siteDescription =
-  "Portfolio of Fayyad Dahweesh, an IT Support professional with hands-on cybersecurity projects in OSINT, penetration testing, security operations, and defensive security.";
+  "Portfolio of Fayyad Dahweesh, an IT Support and Technical Support professional with hands-on experience in Microsoft 365, Entra ID, Intune, Microsoft Defender, Active Directory, SIEM, SOC investigation, and cybersecurity projects.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+
   title: {
     default: siteTitle,
     template: "%s | Fayyad Dahweesh",
   },
+
   description: siteDescription,
+
   applicationName: "Fayyad Dahweesh Portfolio",
-  authors: [{ name: "Fayyad Dahweesh", url: siteUrl }],
+
+  authors: [
+    {
+      name: "Fayyad Dahweesh",
+      url: siteUrl,
+    },
+  ],
+
   creator: "Fayyad Dahweesh",
   publisher: "Fayyad Dahweesh",
+
   alternates: {
     canonical: "/",
   },
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -39,15 +54,18 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
   },
+
   twitter: {
     card: "summary",
     title: siteTitle,
     description: siteDescription,
   },
+
   robots: {
     index: true,
     follow: true,
   },
+
   category: "technology",
 };
 

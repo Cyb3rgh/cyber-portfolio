@@ -1,5 +1,4 @@
 import {
-  FaWhatsapp,
   FaGithub,
   FaLinkedin,
   FaEnvelope,
@@ -9,9 +8,9 @@ import {
 const contacts = [
   {
     type: "Email",
-    value: "Fayyad.dh95@gmail.com",
+    value: "fayyad.dah95@gmail.com",
     icon: <FaEnvelope className="text-4xl text-red-400" />,
-    link: "mailto:Fayyad.dh95@gmail.com",
+    link: "mailto:fayyad.dah95@gmail.com",
   },
   {
     type: "LinkedIn",
@@ -29,13 +28,7 @@ const contacts = [
     type: "Resume",
     value: "View Resume",
     icon: <FaFilePdf className="text-4xl text-red-500" />,
-    link: "/Fayyad_Dahweesh_Technical_Support.pdf",
-  },
-  {
-    type: "WhatsApp",
-    value: "+961 71 70 66 12",
-    icon: <FaWhatsapp className="text-4xl text-green-500" />,
-    link: "https://wa.me/96171706612",
+    link: "/Fayyad_Dahweesh_CV.pdf",
   },
 ];
 
@@ -47,14 +40,9 @@ export default function Contact() {
           Contact
         </p>
 
-        <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+        <h2 className="mb-12 text-3xl font-bold md:text-4xl">
           Let&apos;s Connect
         </h2>
-
-        <p className="mb-12 max-w-3xl text-gray-400">
-          Open to IT Support, Technical Support, and Cybersecurity opportunities.
-          Feel free to reach out through any of the channels below.
-        </p>
 
         <div className="grid gap-6 md:grid-cols-2">
           {contacts.map((contact) => {
@@ -70,9 +58,13 @@ export default function Contact() {
               >
                 <div>{contact.icon}</div>
 
-                <h3 className="mt-4 text-xl font-semibold">{contact.type}</h3>
+                <h3 className="mt-4 text-xl font-semibold">
+                  {contact.type}
+                </h3>
 
-                <p className="mt-2 text-gray-400">{contact.value}</p>
+                <p className="mt-2 break-words text-gray-400">
+                  {contact.value}
+                </p>
               </a>
             );
           })}

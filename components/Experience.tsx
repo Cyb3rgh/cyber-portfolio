@@ -1,42 +1,51 @@
 const experiences = [
   {
-    period: "2023 – Present",
-    role: "Technical Support",
+    period: "May 2024 – Present",
+    role: "Technical Support Specialist",
     company: "SamaLink",
     highlights: [
-      "End-User Support",
-      "System Troubleshooting",
-      "Software Deployment",
-      "Network Connectivity",
+      "End-User Technical Support",
+      "Hardware / Software / OS Troubleshooting",
+      "Network & Connectivity Troubleshooting",
+      "ISP / Vendor Coordination",
+      "Remote & On-Site Support",
+      "Incident Prioritization & Escalation",
     ],
   },
   {
-    period: "2022 – 2023",
-    role: "IT Service Desk Specialist",
-    company: "AUBMC",
+    period: "November 2022 – September 2023",
+    role: "IT Service Desk Delivery Specialist",
+    company: "American University of Beirut Medical Center",
     highlights: [
-      "1200+ Tickets Resolved",
-      "800 Workstations Deployed",
-      "Epic EHR Rollout",
+      "1,200+ Tickets Resolved",
+      "Epic EHR Across ~800 Workstations",
       "TeamDynamix",
+      "Windows & End-User Support",
+      "Incident Tracking & Escalation",
+      "Software Deployment",
     ],
   },
   {
     period: "2025 – Present",
-    role: "Cybersecurity Development",
-    company: "Labs & Certifications",
+    role: "Cybersecurity Projects & Labs",
+    company: "Independent Development",
     highlights: [
       "eJPTv2 Certified",
       "TryHackMe Top 5%",
+      "SIEM & Detection Labs",
+      "Active Directory Security",
       "OSINT Projects",
-      "Security Labs",
+      "Security Testing Labs",
     ],
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-black px-6 py-24 text-white">
+    <section
+      id="experience"
+      className="bg-black px-6 py-24 text-white"
+    >
       <div className="mx-auto max-w-6xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
           💼 Experience
@@ -49,7 +58,7 @@ export default function Experience() {
         <div className="grid gap-8 md:grid-cols-3">
           {experiences.map((experience) => (
             <div
-              key={experience.role}
+              key={`${experience.company}-${experience.role}`}
               className="rounded-2xl border border-gray-800 bg-gray-900/50 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
             >
               <p className="text-sm text-cyan-400">
@@ -68,9 +77,9 @@ export default function Experience() {
                 {experience.highlights.map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 text-gray-300"
+                    className="flex items-start gap-3 text-gray-300"
                   >
-                    <span className="h-2 w-2 rounded-full bg-cyan-400" />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
 
                     <span>{item}</span>
                   </div>
